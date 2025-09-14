@@ -1,0 +1,51 @@
+{
+  "AUTOSAR": {
+    "@{http://www.w3.org/2001/XMLSchema-instance}schemaLocation": "http://autosar.org/schema/r4.0 AUTOSAR_4-2-1_STRICT_COMPACT.xsd",
+    "I-SIGNAL-I-PDU": {
+      "@UUID": "N9e81fe6195e098d93323faeXN9e81fe6195e098d93323fa700",
+      "SHORT-NAME": "SOUND_Short_eHorizon_Pdu",
+      "LENGTH": "64",
+      "CONTAINED-I-PDU-PROPS": {
+        "COLLECTION-SEMANTICS": "QUEUED",
+        "HEADER-ID-LONG-HEADER": "20519",
+        "TRIGGER": "ALWAYS"
+      },
+      "I-PDU-TIMING-SPECIFICATIONS": {
+        "I-PDU-TIMING": {
+          "TRANSMISSION-MODE-DECLARATION": {
+            "TRANSMISSION-MODE-CONDITIONS": {
+              "TRANSMISSION-MODE-CONDITION": {
+                "DATA-FILTER": {
+                  "DATA-FILTER-TYPE": "ALWAYS"
+                },
+                "I-SIGNAL-IN-I-PDU-REF": {
+                  "@DEST": "I-SIGNAL-TO-I-PDU-MAPPING",
+                  "#text": "/Communication/PDUs/SOUND_Short_eHorizon_Pdu/isShort_eHorizonExt_mrx"
+                }
+              }
+            },
+            "TRANSMISSION-MODE-TRUE-TIMING": {
+              "EVENT-CONTROLLED-TIMING": {
+                "NUMBER-OF-REPETITIONS": "0"
+              }
+            }
+          }
+        }
+      },
+      "I-SIGNAL-TO-PDU-MAPPINGS": {
+        "I-SIGNAL-TO-I-PDU-MAPPING": {
+          "@UUID": "N9e81fe6195e098d93324756XN9e81fe6195e098d9332474f00",
+          "SHORT-NAME": "isShort_eHorizonExt_mrx",
+          "I-SIGNAL-REF": {
+            "@DEST": "I-SIGNAL",
+            "#text": "/Communication/Signals/isShort_eHorizonExt"
+          },
+          "PACKING-BYTE-ORDER": "OPAQUE",
+          "START-POSITION": "0",
+          "TRANSFER-PROPERTY": "TRIGGERED"
+        }
+      },
+      "UNUSED-BIT-PATTERN": "0"
+    }
+  }
+}
