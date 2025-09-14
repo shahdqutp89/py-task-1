@@ -1,44 +1,43 @@
-=========================
-🔧 ARXML Handler Scenarios
-=========================
+ARXML Manager Test Suite Summary
+================================
 
-▶ Scenario 1: Load and Parse Valid .armxl File
-- Input: inputs/confidential_input.armxl
-- Expected: Successfully load XML and initialize tree structure
+Test 1: Add New Attributes
+--------------------------
+A custom attribute 'test-version' with value '1.0' was added to all <SHORT-NAME> elements.
+Verification confirmed that the attribute was correctly added to all targeted elements.
 
-▶ Scenario 2: Add Attribute to All <ECU> Tags
-- Command:
-  python main.py --input inputs/confidential_input.armxl \
-                 --output_arxml outputs/EcuExtract_updated.arxml \
-                 --output_json outputs/filename_updated.json \
-                 --action add \
-                 --tag ECU \
-                 --attribute version \
-                 --value 1.0
-- Expected: All <ECU> tags should have attribute version="1.0"
+Test 2: Edit Existing Attributes
+-------------------------------
+The first element with a 'UUID' attribute was modified. The original UUID was temporarily replaced with a new value and then restored.
+The modification and restoration were both verified successfully.
 
-▶ Scenario 3: Edit Attribute
-- Edit version attribute to 2.0 for <ECU>
-- Expected: All <ECU> tags should now have version="2.0"
+Test 3: Edit Added Attributes
+-----------------------------
+The newly added 'test-version' attributes were updated from '1.0' to '2.0'.
+The change was verified across all applicable <SHORT-NAME> elements.
 
-▶ Scenario 4: Delete Attribute
-- Remove version attribute from <ECU>
-- Expected: version attribute is removed from all <ECU> elements
+Test 4: Delete Existing Attributes
+----------------------------------
+An existing attribute ('DEST') was removed from a sample element.
+The removal was verified, and the original attribute value was restored afterward.
 
-▶ Scenario 5: Convert to JSON
-- After performing edits, generate JSON
-- Expected: File `outputs/filename_updated.json` created with correct JSON structure
+Test 5: Delete Added Attributes
+-------------------------------
+The custom 'test-version' attributes were removed from all <SHORT-NAME> elements.
+A check confirmed that none of these elements retained the attribute post-deletion.
 
-▶ Scenario 6: Handle Missing File
-- Input file path does not exist
-- Expected: Print error message "File not found"
+Test 6: Element Finding
+-----------------------
+A search was conducted for elements by tag name and attribute:
+- Elements with tag <LENGTH> were successfully located.
+- Elements containing the 'UUID' attribute were found using attribute-based search.
 
-▶ Scenario 7: Invalid XML Format
-- Input is a broken XML
-- Expected: Gracefully handle and report XML parsing error
+Test 7: Save File
+-----------------
+The modified ARXML structure was saved to the file: output_test_result.arxml.
 
-▶ Scenario 8: Run with no --action
-- Only generate JSON without modifying ARXML
-- Expected: Input file saved as is, JSON created
+Final Status:
+-------------
+All test cases completed successfully.
+The file output_test_result.arxml contains the result of all operations performed.
 
-=========================
