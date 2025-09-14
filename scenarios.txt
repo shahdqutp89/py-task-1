@@ -1,0 +1,44 @@
+=========================
+🔧 ARXML Handler Scenarios
+=========================
+
+▶ Scenario 1: Load and Parse Valid .armxl File
+- Input: inputs/confidential_input.armxl
+- Expected: Successfully load XML and initialize tree structure
+
+▶ Scenario 2: Add Attribute to All <ECU> Tags
+- Command:
+  python main.py --input inputs/confidential_input.armxl \
+                 --output_arxml outputs/EcuExtract_updated.arxml \
+                 --output_json outputs/filename_updated.json \
+                 --action add \
+                 --tag ECU \
+                 --attribute version \
+                 --value 1.0
+- Expected: All <ECU> tags should have attribute version="1.0"
+
+▶ Scenario 3: Edit Attribute
+- Edit version attribute to 2.0 for <ECU>
+- Expected: All <ECU> tags should now have version="2.0"
+
+▶ Scenario 4: Delete Attribute
+- Remove version attribute from <ECU>
+- Expected: version attribute is removed from all <ECU> elements
+
+▶ Scenario 5: Convert to JSON
+- After performing edits, generate JSON
+- Expected: File `outputs/filename_updated.json` created with correct JSON structure
+
+▶ Scenario 6: Handle Missing File
+- Input file path does not exist
+- Expected: Print error message "File not found"
+
+▶ Scenario 7: Invalid XML Format
+- Input is a broken XML
+- Expected: Gracefully handle and report XML parsing error
+
+▶ Scenario 8: Run with no --action
+- Only generate JSON without modifying ARXML
+- Expected: Input file saved as is, JSON created
+
+=========================

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" 
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-2-1_STRICT_COMPACT.xsd">
+            <I-SIGNAL-I-PDU UUID="N9e81fe6195e098d93323faeXN9e81fe6195e098d93323fa700">
+              <SHORT-NAME>SOUND_Short_eHorizon_Pdu</SHORT-NAME>
+              <LENGTH>64</LENGTH>
+              <CONTAINED-I-PDU-PROPS>
+                <COLLECTION-SEMANTICS>QUEUED</COLLECTION-SEMANTICS>
+                <HEADER-ID-LONG-HEADER>20519</HEADER-ID-LONG-HEADER>
+                <TRIGGER>ALWAYS</TRIGGER>
+              </CONTAINED-I-PDU-PROPS>
+              <I-PDU-TIMING-SPECIFICATIONS>
+                <I-PDU-TIMING>
+                  <TRANSMISSION-MODE-DECLARATION>
+                    <TRANSMISSION-MODE-CONDITIONS>
+                      <TRANSMISSION-MODE-CONDITION>
+                        <DATA-FILTER>
+                          <DATA-FILTER-TYPE>ALWAYS</DATA-FILTER-TYPE>
+                        </DATA-FILTER>
+                        <I-SIGNAL-IN-I-PDU-REF DEST="I-SIGNAL-TO-I-PDU-MAPPING">
+                          /Communication/PDUs/SOUND_Short_eHorizon_Pdu/isShort_eHorizonExt_mrx
+                        </I-SIGNAL-IN-I-PDU-REF>
+                      </TRANSMISSION-MODE-CONDITION>
+                      </TRANSMISSION-MODE-CONDITIONS>
+                    <TRANSMISSION-MODE-TRUE-TIMING>
+                      <EVENT-CONTROLLED-TIMING>
+                        <NUMBER-OF-REPETITIONS>0</NUMBER-OF-REPETITIONS>
+                      </EVENT-CONTROLLED-TIMING>
+                    </TRANSMISSION-MODE-TRUE-TIMING>
+                  </TRANSMISSION-MODE-DECLARATION>
+                </I-PDU-TIMING>
+              </I-PDU-TIMING-SPECIFICATIONS>
+              <I-SIGNAL-TO-PDU-MAPPINGS>
+                <I-SIGNAL-TO-I-PDU-MAPPING UUID="N9e81fe6195e098d93324756XN9e81fe6195e098d9332474f00">
+                  <SHORT-NAME>isShort_eHorizonExt_mrx</SHORT-NAME>
+                  <I-SIGNAL-REF DEST="I-SIGNAL">/Communication/Signals/isShort_eHorizonExt</I-SIGNAL-REF>
+                  <PACKING-BYTE-ORDER>OPAQUE</PACKING-BYTE-ORDER>
+                  <START-POSITION>0</START-POSITION>
+                  <TRANSFER-PROPERTY>TRIGGERED</TRANSFER-PROPERTY>
+                </I-SIGNAL-TO-I-PDU-MAPPING>
+              </I-SIGNAL-TO-PDU-MAPPINGS>
+              <UNUSED-BIT-PATTERN>0</UNUSED-BIT-PATTERN>
+            </I-SIGNAL-I-PDU>
+</AUTOSAR>

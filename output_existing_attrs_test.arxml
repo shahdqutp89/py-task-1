@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<ns0:AUTOSAR xmlns:ns0="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-2-1_STRICT_COMPACT.xsd">
+            <ns0:I-SIGNAL-I-PDU UUID="N9e81fe6195e098d93323faeXN9e81fe6195e098d93323fa700">
+              <ns0:SHORT-NAME>SOUND_Short_eHorizon_Pdu</ns0:SHORT-NAME>
+              <ns0:LENGTH>64</ns0:LENGTH>
+              <ns0:CONTAINED-I-PDU-PROPS>
+                <ns0:COLLECTION-SEMANTICS>QUEUED</ns0:COLLECTION-SEMANTICS>
+                <ns0:HEADER-ID-LONG-HEADER>20519</ns0:HEADER-ID-LONG-HEADER>
+                <ns0:TRIGGER>ALWAYS</ns0:TRIGGER>
+              </ns0:CONTAINED-I-PDU-PROPS>
+              <ns0:I-PDU-TIMING-SPECIFICATIONS>
+                <ns0:I-PDU-TIMING>
+                  <ns0:TRANSMISSION-MODE-DECLARATION>
+                    <ns0:TRANSMISSION-MODE-CONDITIONS>
+                      <ns0:TRANSMISSION-MODE-CONDITION>
+                        <ns0:DATA-FILTER>
+                          <ns0:DATA-FILTER-TYPE>ALWAYS</ns0:DATA-FILTER-TYPE>
+                        </ns0:DATA-FILTER>
+                        <ns0:I-SIGNAL-IN-I-PDU-REF DEST="I-SIGNAL-TO-I-PDU-MAPPING">
+                          /Communication/PDUs/SOUND_Short_eHorizon_Pdu/isShort_eHorizonExt_mrx
+                        </ns0:I-SIGNAL-IN-I-PDU-REF>
+                      </ns0:TRANSMISSION-MODE-CONDITION>
+                      </ns0:TRANSMISSION-MODE-CONDITIONS>
+                    <ns0:TRANSMISSION-MODE-TRUE-TIMING>
+                      <ns0:EVENT-CONTROLLED-TIMING>
+                        <ns0:NUMBER-OF-REPETITIONS>0</ns0:NUMBER-OF-REPETITIONS>
+                      </ns0:EVENT-CONTROLLED-TIMING>
+                    </ns0:TRANSMISSION-MODE-TRUE-TIMING>
+                  </ns0:TRANSMISSION-MODE-DECLARATION>
+                </ns0:I-PDU-TIMING>
+              </ns0:I-PDU-TIMING-SPECIFICATIONS>
+              <ns0:I-SIGNAL-TO-PDU-MAPPINGS>
+                <ns0:I-SIGNAL-TO-I-PDU-MAPPING UUID="N9e81fe6195e098d93324756XN9e81fe6195e098d9332474f00">
+                  <ns0:SHORT-NAME>isShort_eHorizonExt_mrx</ns0:SHORT-NAME>
+                  <ns0:I-SIGNAL-REF DEST="I-SIGNAL">/Communication/Signals/isShort_eHorizonExt</ns0:I-SIGNAL-REF>
+                  <ns0:PACKING-BYTE-ORDER>OPAQUE</ns0:PACKING-BYTE-ORDER>
+                  <ns0:START-POSITION>0</ns0:START-POSITION>
+                  <ns0:TRANSFER-PROPERTY>TRIGGERED</ns0:TRANSFER-PROPERTY>
+                </ns0:I-SIGNAL-TO-I-PDU-MAPPING>
+              </ns0:I-SIGNAL-TO-PDU-MAPPINGS>
+              <ns0:UNUSED-BIT-PATTERN>0</ns0:UNUSED-BIT-PATTERN>
+            </ns0:I-SIGNAL-I-PDU>
+</ns0:AUTOSAR>
