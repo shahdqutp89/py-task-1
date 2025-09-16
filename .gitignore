@@ -1,0 +1,33 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+.env/
+.venv/
+
+# VSCode settings
+.vscode/
+
+# Ignore log files, temp files
+*.log
+*.tmp
+
+# Ignore YAML files
+*.yml
+*.yaml
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore build/dist folders (if used)
+build/
+dist/
+
+# Ignore any secret or config files
+*.secret
+*.key
