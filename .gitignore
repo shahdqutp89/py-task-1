@@ -30,4 +30,3 @@ dist/
 
 # Ignore any secret or config files
 *.secret
-*.key
