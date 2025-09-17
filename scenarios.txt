@@ -40,4 +40,3 @@ Final Status:
 -------------
 All test cases completed successfully.
 The file output_test_result.arxml contains the result of all operations performed.
-
