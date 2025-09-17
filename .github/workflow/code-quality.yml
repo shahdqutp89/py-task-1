@@ -1,0 +1,29 @@
+name: Code Quality Checks
+
+on:
+  pull_request:
+
+jobs:
+  black-formatting:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.12"
+      - name: Install Black
+        run: pip install black
+      - name: Run Black check
+        run: black --check .
+
+  python-compatibility:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.12"
+      - name: Syntax check
+        run: python -m compileall .
