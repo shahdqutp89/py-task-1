@@ -1,7 +1,13 @@
 import xml.etree.ElementTree as ET
 from typing import Optional, List, Dict, Any
 
-from implementations import XMLFileReader, XMLFileWriter, ElementManipulator, ElementFinder
+from implementations import (
+    XMLFileReader,
+    XMLFileWriter,
+    ElementManipulator,
+    ElementFinder,
+)
+
 
 class ARXMLManagerSingleton:
     _instance = None
@@ -15,6 +21,7 @@ class ARXMLManagerSingleton:
     def __init__(self):
         if not self._initialized:
             self._initialized = True
+
 
 class ARXMLManager(ARXMLManagerSingleton):
     def __init__(self, reader=None, writer=None, manipulator=None, finder=None):
@@ -51,11 +58,14 @@ class ARXMLManager(ARXMLManagerSingleton):
             self._manipulator.add_attribute(e, attr_name, attr_value)
         return len(elements)
 
+
 class ARXMLManagerFactory:
     @staticmethod
     def create_standard_manager() -> ARXMLManager:
         return ARXMLManager()
 
     @staticmethod
-    def create_custom_manager(reader=None, writer=None, manipulator=None, finder=None) -> ARXMLManager:
+    def create_custom_manager(
+        reader=None, writer=None, manipulator=None, finder=None
+    ) -> ARXMLManager:
         return ARXMLManager(reader, writer, manipulator, finder)
